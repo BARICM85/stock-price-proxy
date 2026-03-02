@@ -1,7 +1,11 @@
 import express from "express";
 import fetch from "node-fetch";
+import cors from "cors";
 
 const app = express();
+
+// 🔥 Enable CORS for all origins (safe for this public API)
+app.use(cors());
 
 app.get("/price/:symbol", async (req, res) => {
   const symbol = req.params.symbol;
